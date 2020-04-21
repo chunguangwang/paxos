@@ -48,7 +48,8 @@ public class LeaderLogic implements FailureListener {
         }
         for (MultiRequest assistant : new ArrayList<MultiRequest>(assistants)) {
             assistant.receive(message);
-            if (assistant.isFinished()) assistants.remove(assistant);
+            if (assistant.isFinished())
+                assistants.remove(assistant);
         }
     }
 

@@ -119,7 +119,8 @@ public abstract class MultiRequest<T extends Serializable, R extends MessageWith
 
     protected void resendRequests(long time) {
         for (Member member : membership.getMembers()) {
-            if (!responses.containsKey(member)) messenger.sendTo(member, req);
+            if (!responses.containsKey(member))
+                messenger.sendTo(member, req);
         }
         lastResend = time;
     }
